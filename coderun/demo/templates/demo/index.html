@@ -1,0 +1,19 @@
+<div>
+    <div>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Push me</button>
+        </form>
+    </div>
+    <div>
+        {% if books %}
+
+        {% for book in books%}
+        <h1>Title: {{ book.title }}</h1>
+        <h1>Author: {{ book.author }}</h1>
+        {% endfor %}
+        {% endif %}
+    </div>
+</div>
+
